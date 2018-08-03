@@ -1,8 +1,8 @@
 spring:
   application:
-    name: spring-cloud-eureka-client-prince-2
+    name: spring-cloud-eureka-client-1
 server:
-  port: 0
+  port: 8081
 eureka:
   client:
     serviceUrl:
