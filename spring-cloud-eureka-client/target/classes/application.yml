@@ -1,11 +1,19 @@
-spring:
-  application:
-    name: spring-cloud-eureka-client-prince-2
 server:
-  port: 0
+  port: 9098    #port number
+ 
 eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
   client:
     serviceUrl:
-      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
-  instance:
-    preferIpAddress: true
+      defaultZone: http://127.0.0.1:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+      
+ 
+spring:    
+  application:
+    name: client-application   #current service name to be used by the eureka server

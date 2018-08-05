@@ -1,6 +1,10 @@
 server:
-  port: 8761
+  port: 8761        #on which port this server will run
 eureka:
   client:
-    registerWithEureka: false
+    registerWithEureka: false     #tells that do not register myself because i will be acting as server
     fetchRegistry: false
+    
+  server:
+    enableSelfPreservation: false       #this  i added because when we stopped client service then that service was not
+                                        #getting de registered, by adding this it work
